@@ -11,10 +11,12 @@
 {% endblock %}
 <!-- Content block -->
 <div class="container">
+
 	<div class="row">
-	
+
 				{{wtf.quick_form(form)}}
-		<ul style="list-style: none;">
+        <ul style="list-style: none;">
+
 				{% for pitch in pitches %}
 					<div class="list-group">
 						<a href="#">

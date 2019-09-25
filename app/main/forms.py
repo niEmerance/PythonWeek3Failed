@@ -2,11 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,TextAreaField,SubmitField,RadioField
 from wtforms.validators import Required
 
-# class ReviewForm(FlaskForm):
 
-#     title = StringField('Review title',validators=[Required()])
-#     review = TextAreaField('Movie review', validators=[Required()])
-#     submit = SubmitField('Submit')
 class PitchForm(FlaskForm):
    title = StringField('Pitch Title',validators=[Required()])
    description = TextAreaField('Pitch Description', validators=[Required()]) 
@@ -22,7 +18,7 @@ class UpvoteForm(FlaskForm):
 
 class Downvote(FlaskForm):
 	submit = SubmitField()
-    
+
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [Required()])
     submit = SubmitField('Submit')
