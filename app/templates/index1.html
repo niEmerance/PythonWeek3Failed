@@ -1,0 +1,76 @@
+{% extends 'bootstrap/base.html' %}
+{% import 'macros.html' as macro %}
+{% block navbar %}
+{% include 'navbar.html'%}
+{% endblock %}
+<!-- Styles block -->
+
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+    <link href="https://fonts.googleapis.com/css?family=Sacramento&display=swap" rel="stylesheet">
+{% endblock %}
+<!-- Content block -->
+  {% block content %}
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <p style="margin-top:50px;font-family: cursive;font-size:18px;">
+            Pitching!
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <!-- <img src="https://cdn.pixabay.com/photo/2015/11/03/08/57/browse-1019849_960_720.jpg"height="300"> -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <h1 style="text-align:center;margin-top:150px;font-family: Georgia, 'Times New Roman', Times, serif;"> Categories</h1>
+      <br>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-sm-3">
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif" data-toggle="tab" href="#Interview">Soccer</a>
+      <!-- <img src="https://cdn.pixabay.com/photo/2015/10/31/14/35/dark-1015828_960_720.jpg" class="image-responsive" width="250">  -->
+      </div>
+      <div class="col-sm-3">
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif" data-toggle="tab" href="#Business">Business</a> 
+      <!-- <img src="https://cdn.pixabay.com/photo/2015/10/31/14/35/dark-1015828_960_720.jpg"class="image-responsive" width="250">  -->
+      </div>
+      <div class="col-sm-3">
+      
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif" data-toggle="tab" href="#Promotion">Health</a>
+      <!-- <img src="https://cdn.pixabay.com/photo/2015/10/31/14/35/dark-1015828_960_720.jpg"class="image-responsive" width="250">    -->
+    </div>
+      <div class="col-sm-3">
+      
+      <a style="font-size:24px;text-transform:uppercase;text-decoration:none;color:black;font-family: 'Times New Roman', Times, serif"data-toggle="tab" href="#Product'">Environment</a>
+      <!-- <img src="https://cdn.pixabay.com/photo/2015/10/31/14/35/dark-1015828_960_720.jpg"class="image-responsive" width="250">    -->
+    </div>
+       
+    </div>
+    
+   
+      
+    <div class="tab-content">
+        <div id="Interview" class="container tab-pane active"><br>
+          {{ macro.display(Soccer) }}
+          
+        </div>
+        <div id="Business" class="container tab-pane fade"><br>
+          {{ macro.display(Business) }}
+        </div>
+        <div id="Promotion" class="container tab-pane fade"><br>
+          {{ macro.display(Health)}}
+        </div>
+        <div id="Product" class="container tab-pane fade"><br>
+          {{ macro.display(Environment) }}
+        </div>
+      </div> 
+      </div>
+      <div style="margin-top:300px; background-color:rgba(0,0,0,0.8);text-align:center;color:white;height:70px;font-size:18px;padding-top:30px;"><p> &copy;2019 copyright By Emerance </p></div>
+  {% endblock %}
