@@ -23,7 +23,7 @@ def index():
     upvotes = Upvote.get_all_upvotes(pitch_id=Pitch.id)
     
 
-    return render_template('index1.html', title = title, Soccer=Soccer, Business=Business,  Health = Health, Environment= Environment)
+    return render_template('index1.html', title = title, Soccer=Soccer, Business=Business,  Health = Health, Environment= Environment,upvotes=upvotes)
 
 @main.route('/pitch/new/', methods = ['GET','POST'])
 @login_required
@@ -102,7 +102,9 @@ def profile(uname):
         abort(404)
 
     return render_template("profile/profile.html", user = user)
-
+# @main.route('/movie/review/new/<int:id>', methods = ['GET','POST'])
+# @login_required
+# def new_review(id):
 @main.route('/user/<uname>/update',methods = ['GET','POST'])
 @login_required
 def update_profile(uname):

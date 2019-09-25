@@ -8,7 +8,7 @@ from wtforms.validators import Required
 #     review = TextAreaField('Movie review', validators=[Required()])
 #     submit = SubmitField('Submit')
 class PitchForm(FlaskForm):
-   Title = StringField('Pitch Title',validators=[Required()])
+   title = StringField('Pitch Title',validators=[Required()])
    description = TextAreaField('Pitch Description', validators=[Required()]) 
    category = RadioField('Label', choices=[ ('Soccer','Soccer'), ('Business','Business'),('Health','Health'),('Environment','Environment')],validators=[Required()])
    submit = SubmitField('Submit')
@@ -22,6 +22,7 @@ class UpvoteForm(FlaskForm):
 
 class Downvote(FlaskForm):
 	submit = SubmitField()
+    
 class UpdateProfile(FlaskForm):
     bio = TextAreaField('Tell us about you.',validators = [Required()])
     submit = SubmitField('Submit')
